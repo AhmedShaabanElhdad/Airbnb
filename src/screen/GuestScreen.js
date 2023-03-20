@@ -29,7 +29,7 @@ const GuestScreen = () => {
     const [infants, setInfants] = useState(0)
     return (
 
-        <View style={tw`p-4 justify-between h-full items-bottom`}>
+        <View style={tw`p-4 justify-between h-full`}>
             <View>
             <View style={tw`flex-row items-center  p-2 border-b border-gray-100 justify-between`}>
                         <View>
