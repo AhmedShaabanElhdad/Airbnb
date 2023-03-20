@@ -1,7 +1,6 @@
 
 import { useState } from "react"
-import { FlatList, Text, TouchableOpacity, View } from "react-native"
-import { Icon } from "react-native-elements"
+import { Text, TouchableOpacity, View } from "react-native"
 
 import tw from "twrnc"
 
@@ -29,9 +28,10 @@ const GuestScreen = () => {
     const [children, setChildren] = useState(0)
     const [infants, setInfants] = useState(0)
     return (
-        <View style={tw`p-4`}>
 
-                    <View style={tw`flex-row items-center  p-2 border-b border-gray-100 justify-between`}>
+        <View style={tw`p-4 justify-between h-full items-bottom`}>
+            <View>
+            <View style={tw`flex-row items-center  p-2 border-b border-gray-100 justify-between`}>
                         <View>
                             <Text style={tw`text-base font-bold`}>{data[0].type}</Text>
                             <Text style={tw`text-gray-500 text-sm`}>{data[0].desc}</Text>
@@ -95,6 +95,12 @@ const GuestScreen = () => {
                         </View>
 
                     </View>
+            </View>
+
+            <TouchableOpacity disabled={(adults===0)}
+                    style={tw`bg-red-300 rounded-xl py-3 m-3 ${(adults===0) && "bg-gray-300"}`}>
+                    <Text style={tw`text-xl text-center text-white `}>confirm</Text>
+                </TouchableOpacity>
         
         
 

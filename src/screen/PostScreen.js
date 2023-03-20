@@ -2,7 +2,7 @@ import { FlatList } from "react-native"
 
 import { tw } from "twrnc"
 import Post from "../component/post"
-import MyPosts from "../assets/data/mockposts"
+import MyPosts from "../data/mockposts"
 
 const PostScreen = () => {
     return (

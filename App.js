@@ -1,15 +1,17 @@
 
-import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
-import GuestScreen from './screen/GuestScreen';
-import PostScreen from './screen/PostScreen';
-import SearchSuggestionScreen from './screen/SearchSuggestionScreen';
+import { StyleSheet, StatusBar } from 'react-native';
+import Router from './src/navigation/Router';
+import {SafeAreaView}  from "react-native-safe-area-context";
+import SearchSuggestionScreen from './src/screen/GuestScreen';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView  style={styles.container}>
+    <Router>
       {/* <PostScreen></PostScreen> */}
       {/* <SearchSuggestionScreen></SearchSuggestionScreen> */}
-      <GuestScreen></GuestScreen>
+      {/* <GuestScreen></GuestScreen> */}
+    </Router>
     </SafeAreaView>
   );
 }
@@ -17,6 +19,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom:5,
     backgroundColor: '#fff',
     marginTop:StatusBar.currentHeight
   },
