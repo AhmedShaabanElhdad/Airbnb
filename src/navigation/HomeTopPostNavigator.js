@@ -2,6 +2,7 @@ import { Entypo, EvilIcons, Feather, FontAwesome5 } from "@expo/vector-icons"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
 import { Icon } from "react-native-elements"
+import MapScreen from "../screen/MapScreen"
 import PostScreen from "../screen/PostScreen"
 
 
@@ -9,11 +10,20 @@ const HomeTopPostNavigator = () => {
     const Tab = createMaterialTopTabNavigator()
     return (
         
-        <Tab.Navigator tabBarOptions={{
+        <Tab.Navigator 
+        tabBarOptions={{
             activeTintColor: '#f15454',
+            inactiveTintColor: 'gray',
+            tabStyle:{
+                marginTop:(Platform.OS === 'ios') ? 0 : 0,
+                height : 55,
+                flexDirection: 'row'
+              },
+            labelPosition: 'beside-icon',
             indicatorStyle:{
                 backgroundColor:'#f15454'
             }
+            
         }}>
             <Tab.Screen
                 name="List"
@@ -33,7 +43,7 @@ const HomeTopPostNavigator = () => {
 
             <Tab.Screen
                 name="Map"
-                component={PostScreen}
+                component={MapScreen}
                 options={
                     {
                             tabBarIcon: ({ color }) => (
